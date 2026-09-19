@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galatasaray Görev Listem & Canlı Takip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="bgSlider" class="bg-slider"></div>
+  <div class="bg-overlay"></div>
+
+  <div class="container">
+    
+    <!-- Hava Durumu & Tema Kutusu -->
+    <div id="havaKutusu" class="weather-box">
+      <div>
+        <span id="sehirAdi">Yükleniyor...</span>
+        <div id="tarihSaat" class="date-text"></div>
+      </div>
+      <div class="top-right">
+        <span id="sicaklik">--°C</span>
+        <button id="themeToggle" onclick="temaDegistir()">🌙</button>
+      </div>
+    </div>
+
+    <!-- GS Canlı Bilgi Kartı -->
+    <div class="gs-info-card">
+      <div class="gs-header">
+        <span class="gs-title">🦁 GALATASARAY CANLI TAKİP</span>
+        <span class="gs-badge" id="gsSira">1. Sıra (13 Puan)</span>
+      </div>
+      <div class="gs-details">
+        <div class="gs-box">
+          <small>Son Maç</small>
+          <strong id="sonMac">GS 1 - 0 Kocaelispor</strong>
+        </div>
+        <div class="gs-box">
+          <small>Gelecek Maç</small>
+          <strong id="gelecekMac">Trabzonspor - GS</strong>
+        </div>
+      </div>
+    </div>
+
+    <h1>Görev Listem 📝</h1>
+    
+    <div class="input-container">
+      <input type="text" id="gorevInput" placeholder="Yeni bir görev yazın...">
+      <select id="kategoriSelect">
+        <option value="Genel">📌 Genel</option>
+        <option value="İş">💼 İş</option>
+        <option value="Kişisel">👤 Kişisel</option>
+        <option value="Alışveriş">🛒 Alışveriş</option>
+      </select>
+      <label for="resimInput" class="file-label">🖼️</label>
+      <input type="file" id="resimInput" accept="image/*">
+      <button id="ekleBtn" onclick="gorevEkle()">Ekle</button>
+    </div>
+
+    <div class="filter-container">
+      <button class="filter-btn active" onclick="filtrele('tum', this)">Tümü</button>
+      <button class="filter-btn" onclick="filtrele('aktif', this)">Aktif</button>
+      <button class="filter-btn" onclick="filtrele('tamamlanan', this)">Tamamlanan</button>
+    </div>
+
+    <ul id="gorevListesi"></ul>
+
+    <button id="tumunuTemizleBtn" onclick="tumunuTemizle()">Tümünü Temizle 🗑️</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
